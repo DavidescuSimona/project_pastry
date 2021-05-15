@@ -1,4 +1,4 @@
-# Project Pastry
+## Project Pastry ##
 This is a web application developed by Davidescu Maria Simona, Iftinchi Ioana Melania and Rusu Bianca Sorina for TAP course.
 
 Do you want a cake for someone dear to you? Pastry is a web application designed by our team to help you. You can choose from a variety of cackes and add them to your cart. 
