@@ -7,8 +7,10 @@ using PASTRY.Data;
 using Microsoft.EntityFrameworkCore;
 namespace PASTRY
 {
+    
     public class Startup
     {
+        public static bool isLogged = false;
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
