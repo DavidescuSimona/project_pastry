@@ -5,6 +5,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using PASTRY.Data;
 using Microsoft.EntityFrameworkCore;
+using PASTRYInfrastructure.DataAccess;
+
 namespace PASTRY
 {
     
@@ -22,8 +24,11 @@ namespace PASTRY
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.SetupDataAccessInfrastructure(Configuration.GetConnectionString("MvcCakeContext"));
             services.AddDbContext<MvcCakeContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("MvcCakeContext")));
+            services.AddDbContext<MvcDrinkContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("MvcDrinkContext")));
 
         }
 
