@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using PASTRY.Models;
+using PASTRYInfrastructure.DataAccess;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -12,15 +13,26 @@ namespace PASTRY.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IDataRepository _dataRepository;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IDataRepository dataRepository)
         {
             _logger = logger;
+            _dataRepository = dataRepository;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var data = _dataRepository.Query<Cake>().Take(10).ToArray();
+            return View(data.Select(x => new Cake
+            {
+                Name = x.Name,
+                Id = x.Id,
+                IdImage = x.IdImage,
+                Price = x.Price,
+                Weight = x.Weight
+            }));
+            // return View();
         }
 
         public IActionResult Privacy()

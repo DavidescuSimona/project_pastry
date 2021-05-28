@@ -29,7 +29,7 @@ namespace PASTRY
             options.UseSqlServer(Configuration.GetConnectionString("MvcCakeContext")));
             services.AddDbContext<MvcDrinkContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("MvcDrinkContext")));
-
+            //trebuie vazut
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
