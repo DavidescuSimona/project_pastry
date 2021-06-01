@@ -7,12 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PASTRY", "PASTRY\PASTRY.csp
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "PASTRY.Database", "PASTRY.Database\PASTRY.Database.sqlproj", "{7ED8FFE8-61A6-42EA-A52F-006B810CA8BA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PASTRYInfrastructure.DataAccess", "PASTRYInfrastructure.DataAccess\PASTRYInfrastructure.DataAccess.csproj", "{34820028-1F99-47DE-B3C9-018186781F7E}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PASTRY.DomainEntities", "PASTRY.DomainEntities\PASTRY.DomainEntities.csproj", "{2B4D2D12-9DFD-4D12-B018-BD002B8A3CBF}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PASTRY.DomainEntities.Mappings", "PASTRY.DomainEntities.Mappings\PASTRY.DomainEntities.Mappings.csproj", "{785B82B3-46B7-4CAD-86B0-31E451AAC520}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,18 +23,6 @@ Global
 		{7ED8FFE8-61A6-42EA-A52F-006B810CA8BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7ED8FFE8-61A6-42EA-A52F-006B810CA8BA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7ED8FFE8-61A6-42EA-A52F-006B810CA8BA}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{34820028-1F99-47DE-B3C9-018186781F7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{34820028-1F99-47DE-B3C9-018186781F7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{34820028-1F99-47DE-B3C9-018186781F7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{34820028-1F99-47DE-B3C9-018186781F7E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2B4D2D12-9DFD-4D12-B018-BD002B8A3CBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2B4D2D12-9DFD-4D12-B018-BD002B8A3CBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2B4D2D12-9DFD-4D12-B018-BD002B8A3CBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2B4D2D12-9DFD-4D12-B018-BD002B8A3CBF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{785B82B3-46B7-4CAD-86B0-31E451AAC520}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{785B82B3-46B7-4CAD-86B0-31E451AAC520}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{785B82B3-46B7-4CAD-86B0-31E451AAC520}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{785B82B3-46B7-4CAD-86B0-31E451AAC520}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

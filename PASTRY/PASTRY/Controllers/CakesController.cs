@@ -18,6 +18,10 @@ namespace PASTRY.Controllers
         {
             _context = context;
         }
+        public async Task<IActionResult> ViewCakes()
+        {
+            return View(await _context.Cake.ToListAsync());
+        }
 
         // GET: Cakes
         public async Task<IActionResult> Index()

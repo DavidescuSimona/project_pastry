@@ -19,6 +19,10 @@ namespace PASTRY.Controllers
             _context = context;
         }
 
+        public async Task<IActionResult> ViewDrinks()
+        {
+            return View(await _context.Drink.ToListAsync());
+        }
         // GET: Drinks
         public async Task<IActionResult> Index()
         {
