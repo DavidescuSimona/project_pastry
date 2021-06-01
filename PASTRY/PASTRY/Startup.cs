@@ -7,8 +7,10 @@ using PASTRY.Data;
 using Microsoft.EntityFrameworkCore;
 namespace PASTRY
 {
+    
     public class Startup
     {
+        public static bool isLogged = false;
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -22,6 +24,8 @@ namespace PASTRY
             services.AddControllersWithViews();
             services.AddDbContext<MvcCakeContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("MvcCakeContext")));
+            services.AddDbContext<MvcDrinkContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("MvcDrinkContext")));
 
         }
 
