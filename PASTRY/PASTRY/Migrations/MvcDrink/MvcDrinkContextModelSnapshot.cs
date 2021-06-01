@@ -34,6 +34,9 @@ namespace PASTRY.Migrations.MvcDrink
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<string>("ImageDrink")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("Drink");

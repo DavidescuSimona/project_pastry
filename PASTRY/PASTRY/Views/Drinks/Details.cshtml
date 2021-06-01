@@ -1,7 +1,7 @@
 ﻿@model PASTRY.Models.Drink
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Details drinks";
 }
 
 <h1>Details</h1>
@@ -10,23 +10,31 @@
     <h4>Drink</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.IdImage)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.IdImage)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Name)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Name)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Price)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Price)
+        </dd>
+        <dt class="col-sm-2">
+            <input name="file" type="File" />
+            @Html.ValidationMessageFor(model => model.ImageDrink)
+        </dt>
+        <dd class="col-sm-10">
+            <input name="file" type="File" />
+            @Html.ValidationMessageFor(model => model.ImageDrink)
         </dd>
     </dl>
 </div>

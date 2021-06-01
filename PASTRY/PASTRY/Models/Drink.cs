@@ -11,5 +11,7 @@ namespace PASTRY.Models
         public int IdImage { get; set; }
         public string Name { get; set; }
         public decimal Price { get; set; }
+
+        public string ImageDrink { get; set; }
     }
 }

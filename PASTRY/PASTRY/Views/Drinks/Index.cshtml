@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<PASTRY.Models.Drink>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Edit Drink";
 }
 
 <h1>Index</h1>
@@ -21,6 +21,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Price)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImageDrink)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -36,6 +39,10 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Price)
             </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImageDrink)
+            </td>
+            
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |

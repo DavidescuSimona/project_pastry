@@ -58,7 +58,7 @@ namespace PASTRY.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,IdImage,Name,Price")] Drink drink)
+        public async Task<IActionResult> Create([Bind("Id,IdImage,Name,Price,ImageDrink")] Drink drink)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +90,7 @@ namespace PASTRY.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,IdImage,Name,Price")] Drink drink)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,IdImage,Name,Price,ImageDrink")] Drink drink)
         {
             if (id != drink.Id)
             {

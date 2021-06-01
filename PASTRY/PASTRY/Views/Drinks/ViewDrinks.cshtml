@@ -49,23 +49,28 @@
         @foreach (var item in Model)
         {
 
-            <div class="box">
-                <header>
-                    <h1>
-                        @Html.DisplayFor(modelItem => item.Name)
-                    </h1>
-                </header>
-                <p>
-                    @Html.DisplayNameFor(model => model.IdImage)
-                    @Html.DisplayFor(modelItem => item.IdImage)
-                </p>
+        <div class="box">
+            <header>
+                <h1>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </h1>
+            </header>
+            <p>
+                @Html.DisplayNameFor(model => model.IdImage)
+                @Html.DisplayFor(modelItem => item.IdImage)
+            </p>
 
-                <p>
-                    @Html.DisplayNameFor(model => model.Price)
-                    @Html.DisplayFor(modelItem => item.Price)
-                </p>
-                
-            </div>
+            <p>
+                @Html.DisplayNameFor(model => model.Price)
+                @Html.DisplayFor(modelItem => item.Price)
+            </p>
+
+            <p>
+                @Html.DisplayNameFor(model => model.ImageDrink)
+                @Html.DisplayFor(modelItem => item.ImageDrink)
+            </p>
+
+        </div>
 
         }
     </div>

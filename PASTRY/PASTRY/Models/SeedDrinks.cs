@@ -27,12 +27,14 @@ namespace PASTRY.Models
                         IdImage = 1,
                         Name = "Cappuccino",
                         Price = 7.00M,
+                        ImageDrink = "~/images/Drink.png",
                     },
                     new Drink
                     {
                         IdImage = 2,
                         Name = "Hot Chocolate",
                         Price = 9.99M,
+                        ImageDrink = "~/images/Drink.png",
                     }
                 );
                 context.SaveChanges();
