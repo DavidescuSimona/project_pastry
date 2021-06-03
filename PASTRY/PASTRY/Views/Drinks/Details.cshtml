@@ -29,12 +29,16 @@
             @Html.DisplayFor(model => model.Price)
         </dd>
         <dt class="col-sm-2">
-            <input name="file" type="File" />
-            @Html.ValidationMessageFor(model => model.ImageDrink)
+            @Html.DisplayNameFor(model => model.ImageDrink)
         </dt>
         <dd class="col-sm-10">
-            <input name="file" type="File" />
-            @Html.ValidationMessageFor(model => model.ImageDrink)
+            @Html.DisplayFor(model => model.ImageDrink)
+        </dd>
+        <dt class="col-sm-2">
+            Uploaded Image
+        </dt>
+        <dd class="col-sm-10">
+            <img src="@("~/images/"+Model.ImageDrink)" asp-append-version="true" width="250px" height="250px" />
         </dd>
     </dl>
 </div>

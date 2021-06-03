@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -13,10 +15,11 @@ namespace PASTRY.Controllers
     public class DrinksController : Controller
     {
         private readonly MvcDrinkContext _context;
-
-        public DrinksController(MvcDrinkContext context)
+        private readonly IWebHostEnvironment _hostEnvironment;
+        public DrinksController(MvcDrinkContext context, IWebHostEnvironment hostEnvironment)
         {
             _context = context;
+            this._hostEnvironment = hostEnvironment;
         }
 
 
@@ -59,10 +62,19 @@ namespace PASTRY.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,IdImage,Name,Price,ImageDrink")] Drink drink)
+        public async Task<IActionResult> Create([Bind("Id,IdImage,Name,Price,ImageFile")] Drink drink)
         {
             if (ModelState.IsValid)
             {
+                string wwwRootPath = _hostEnvironment.WebRootPath;
+                string fileName = Path.GetFileNameWithoutExtension(drink.ImageFile.FileName);
+                string extension = Path.GetExtension(drink.ImageFile.FileName);
+                drink.ImageDrink = fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
+                string path = Path.Combine(wwwRootPath + "/images/", fileName);
+                using (var fileStream = new FileStream(path, FileMode.Create))
+                {
+                    await drink.ImageFile.CopyToAsync(fileStream);
+                }
                 _context.Add(drink);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -91,7 +103,7 @@ namespace PASTRY.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,IdImage,Name,Price,ImageDrink")] Drink drink)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,IdImage,Name,Price,ImageFile")] Drink drink)
         {
             if (id != drink.Id)
             {
@@ -102,6 +114,15 @@ namespace PASTRY.Controllers
             {
                 try
                 {
+                    string wwwRootPath = _hostEnvironment.WebRootPath;
+                    string fileName = Path.GetFileNameWithoutExtension(drink.ImageFile.FileName);
+                    string extension = Path.GetExtension(drink.ImageFile.FileName);
+                    drink.ImageDrink = fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
+                    string path = Path.Combine(wwwRootPath + "/images/", fileName);
+                    using (var fileStream = new FileStream(path, FileMode.Create))
+                    {
+                        await drink.ImageFile.CopyToAsync(fileStream);
+                    }
                     _context.Update(drink);
                     await _context.SaveChangesAsync();
                 }
@@ -145,6 +166,10 @@ namespace PASTRY.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var drink = await _context.Drink.FindAsync(id);
+            //delete image from wwwroot/image
+            var imagePath = Path.Combine(_hostEnvironment.WebRootPath, "images", drink.ImageDrink);
+            if (System.IO.File.Exists(imagePath))
+                System.IO.File.Delete(imagePath);
             _context.Drink.Remove(drink);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
