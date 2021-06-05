@@ -6,6 +6,6 @@ namespace PASTRY.DomainEntities
 {
     public interface IEntityBase
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
     }
 }
