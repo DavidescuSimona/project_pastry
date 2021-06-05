@@ -14,6 +14,11 @@ namespace PASTRY.Data
         {
         }
 
+        /*public MvcDrinkContext(DbContextOptions options)
+            : base(options)
+        {
+        }*/
+
         public DbSet<Drink> Drink { get; set; }
     }
 }
