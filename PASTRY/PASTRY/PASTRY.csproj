@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PASTRY.DomainEntities\PASTRY.DomainEntities.csproj" />
+    <ProjectReference Include="..\PASTRYInfrastructure.DataAccess\PASTRYInfrastructure.DataAccess.csproj" />
   </ItemGroup>
 
 </Project>

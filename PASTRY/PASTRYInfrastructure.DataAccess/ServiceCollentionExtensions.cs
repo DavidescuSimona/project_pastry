@@ -11,9 +11,7 @@ namespace PASTRYInfrastructure.DataAccess
     {
         public static IServiceCollection SetupDataAccessInfrastructure([NotNull] this IServiceCollection services, string connectionString)
         {
-            return services.AddDbContext<DataContext>(opt => opt.UseSqlServer(connectionString))
-            .AddScoped<IDataRepository, DataContext>()
-            .AddScoped<IUnitOfWork, DataContext>();
+            return services.AddDbContext<MvcCakeContext>(opt => opt.UseSqlServer(connectionString));
         }
     }
 }

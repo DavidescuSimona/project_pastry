@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using PASTRY.Data;
+using PASTRYInfrastructure.DataAccess;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;

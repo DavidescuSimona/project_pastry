@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using PASTRY.Data;
 using PASTRY.DomainEntities;
 using PASTRY.Models;
+using PASTRYInfrastructure.DataAccess;
 
 namespace PASTRY.Controllers
 {
