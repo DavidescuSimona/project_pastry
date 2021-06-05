@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PASTRY.Data;
+using PASTRYInfrastructure.DataAccess;
 
 namespace PASTRY.Migrations
 {

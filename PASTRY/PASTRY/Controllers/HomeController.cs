@@ -23,6 +23,11 @@ namespace PASTRY.Controllers
             return View();
         }
 
+        public IActionResult LoginRedirect()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();

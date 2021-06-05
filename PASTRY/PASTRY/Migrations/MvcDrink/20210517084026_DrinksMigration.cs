@@ -14,7 +14,8 @@ namespace PASTRY.Migrations.MvcDrink
                         .Annotation("SqlServer:Identity", "1, 1"),
                     IdImage = table.Column<int>(nullable: false),
                     Name = table.Column<string>(nullable: true),
-                    Price = table.Column<decimal>(nullable: false)
+                    Price = table.Column<decimal>(nullable: false),
+                    ImageDrink = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

@@ -23,7 +23,7 @@ namespace PASTRY.Controllers
             if (username == "pastry")
             {
                 if (password == "tiramisu")
-                { Startup.isLogged = true; return RedirectToAction("Index", "Cakes"); }
+                { Startup.isLogged = true; return RedirectToAction("LoginRedirect", "Home"); }
                 else return RedirectToAction("Login");
             }
             else return RedirectToAction("Login");

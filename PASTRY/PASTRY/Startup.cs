@@ -5,9 +5,16 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using PASTRY.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Migrations;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using System;
+using PASTRYInfrastructure.DataAccess;
+//using Microsoft.Extensions.DependencyInjection;
+
+
 namespace PASTRY
 {
-    
+
     public class Startup
     {
         public static bool isLogged = false;
@@ -30,7 +37,7 @@ namespace PASTRY
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IServiceProvider serviceProvider)
         {
             if (env.IsDevelopment())
             {
@@ -55,6 +62,10 @@ namespace PASTRY
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            serviceProvider.GetService<MvcDrinkContext>()
+                .Database.GetService<IMigrator>()
+                .Migrate(Configuration.GetValue<string>("Migration"));
         }
     }
 }
