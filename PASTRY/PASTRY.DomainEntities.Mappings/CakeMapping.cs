@@ -13,6 +13,11 @@ namespace PASTRY.DomainEntities.Mappings
         {
             builder.ToTable("Cakes");
             builder.Property(c => c.Id).HasColumnName("Id");
+            builder.Property(c => c.Name).HasColumnName("Name");
+            builder.Property(c => c.Price).HasColumnName("Price");
+            builder.Property(c => c.Weight).HasColumnName("Weight");
+            builder.Property(c => c.IdImage).HasColumnName("IdImage");
+            builder.Property(c => c.ImageCake).HasColumnName("ImageCake");
         }
     }
 }
