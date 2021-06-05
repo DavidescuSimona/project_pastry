@@ -1,28 +1,21 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace PASTRY.DomainEntities
 {
     public class Cake
     {
-        public Cake(int id, int idImage, string name, decimal price, int weight)
-        {
-            Id = id;
-            IdImage = idImage;
-            Name = name;
-            Price = price;
-            Weight = weight;
-        }
-
-        public string Name { get; private set; }
-
-        public int IdImage { get; private set; }
-
-        public int Id { get; private set; }
-
-        public decimal Price { get; private set; }
-
-        public int Weight { get; private set; }
+        public int Id { get; set; }
+        public int IdImage { get; set; }
+        public string Name { get; set; }
+        public decimal Price { get; set; }
+        public int Weight { get; set; }
+        public string ImageCake { get; set; }
+        [NotMapped]
+        public IFormFile ImageFile { get; set; }
+       
     }
 }
