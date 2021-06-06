@@ -63,9 +63,9 @@ namespace PASTRY
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
 
-            serviceProvider.GetService<MvcDrinkContext>()
+           /* serviceProvider.GetService<MvcDrinkContext>()
                 .Database.GetService<IMigrator>()
-                .Migrate(Configuration.GetValue<string>("Migration"));
+                .Migrate(Configuration.GetValue<string>("Migration")); */
         }
     }
 }

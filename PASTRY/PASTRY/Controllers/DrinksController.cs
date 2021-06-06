@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PASTRY.Data;
+using PASTRY.DomainEntities;
 using PASTRY.Models;
 
 namespace PASTRY.Controllers
